@@ -26,10 +26,10 @@ function addToBag() {
     const newItem = document.createElement('div');
     newItem.classList.add('item');
     newItem.innerHTML = `
-        <img src="./images/camiseta.png" alt="Camiseta">
+        <img src="./images/camisa.png" alt="Camiseta">
         <div>
             <strong>Camiseta</strong>
-            <span>R$79,90</span>
+            <span>R$49,90</span>
         </div>
         <h3>1</h3>
     `;
