@@ -188,12 +188,12 @@ figure img {
 figure img:hover{
     cursor:zoom-in;
     transform: scale(1.2);
-    filter: drop-shadow(0px 0px 30px var(--brand-primary));    
+    filter: drop-shadow(0px 10px 30px var(--brand-primary));    
 }
 
 .bag-items {
     width: 230px;
-    height: 100px; /* O original estava em height: 300px; */
+    height: 100px; 
     background-color: rgba(208, 208, 208, 0.96);
     position: absolute;
     top: 66px;
@@ -271,6 +271,10 @@ figure img:hover{
     margin-top: 10px;
 }
 
+.sizes p {
+    font-size: 20px;
+}
+
 .size-button {
     background-color: var(--gray_500);
     color: var(--white);
@@ -291,7 +295,18 @@ figure img:hover{
     background-color: var(--brand-primary);
 }
 
-@media (max-width: 600px) {
+.size-button.active {
+    background-color: var(--brand-primary) !important; 
+}
+
+
+.size-choice-text {
+    margin-bottom: -300px;
+    text-align: center;
+}
+
+
+@media (max-width: 870px) {
  body{
     padding: 32px 32px;
     overflow-y: scroll;
@@ -325,6 +340,12 @@ figure img:hover{
     
     .size-button {
         margin-bottom: 10px;
+    }
+
+    .size-choice-text {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
     }
     
 }

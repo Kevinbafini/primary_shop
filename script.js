@@ -14,9 +14,26 @@ function toggleBagItems() {
     bagItems.style.display = bagItems.style.display === 'block' ? 'none' : 'block';
 }
 
+function updateActiveSize() {
+    document.querySelectorAll('.size-button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    this.classList.add('active');
+    window.selectedSize = this.getAttribute('data-size');
+}
+
+
 function addToBag() {
     const bagQuantity = document.querySelector('.bag-quantity');
     const bagItems = document.querySelector('.bag-items');
+
+    if (!window.selectedSize) {
+        alert("Por favor, selecione um tamanho antes de adicionar à sacola.");
+        return;
+    }
+
+    const sizeText = `Tamanho: ${window.selectedSize}`;
 
     const emptyMessage = bagItems.querySelector('.empty-bag-message');
     if (emptyMessage) {
@@ -28,7 +45,7 @@ function addToBag() {
     newItem.innerHTML = `
         <img src="./images/camisa.png" alt="Camiseta">
         <div>
-            <strong>Camiseta</strong>
+            <strong>Camiseta Preta Tradicional ${sizeText}</strong>
             <span>R$49,90</span>
         </div>
         <h3>1</h3>
@@ -39,10 +56,16 @@ function addToBag() {
     bagQuantity.textContent = quantity + 1;
 
     toggleBagItems();
+
+    clearActiveSizes();
+
+    window.selectedSize = null;
 }
     
-
 const addToBagButton = document.querySelector('.button');
 addToBagButton.addEventListener('click', addToBag);
 
+document.querySelectorAll('.size-button').forEach(button => {
+    button.addEventListener('click', updateActiveSize);
+});
 
