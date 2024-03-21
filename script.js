@@ -13,7 +13,6 @@ function toggleBagItems() {
 
     bagItems.style.display = bagItems.style.display === 'block' ? 'none' : 'block';
 }
-
 function updateActiveSize() {
     document.querySelectorAll('.size-button').forEach(button => {
         button.classList.remove('active');
@@ -27,9 +26,12 @@ function updateActiveSize() {
 function addToBag() {
     const bagQuantity = document.querySelector('.bag-quantity');
     const bagItems = document.querySelector('.bag-items');
+    const sizeWarning = document.getElementById('size-warning'); 
+
+    sizeWarning.style.display = 'none';
 
     if (!window.selectedSize) {
-        alert("Por favor, selecione um tamanho antes de adicionar à sacola.");
+        sizeWarning.style.display = 'block';
         return;
     }
 
@@ -45,7 +47,7 @@ function addToBag() {
     newItem.innerHTML = `
         <img src="./images/camisa.png" alt="Camiseta">
         <div>
-            <strong>Camiseta Preta Tradicional ${sizeText}</strong>
+            <strong>Camiseta Preta Tradicional ${sizeText} </strong>
             <span>R$49,90</span>
         </div>
         <h3>1</h3>
