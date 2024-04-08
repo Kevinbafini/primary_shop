@@ -64,7 +64,6 @@ Este projeto é melhor visualizado nos seguintes navegadores:
 Certifique-se de estar usando a versão mais atualizada do navegador para a melhor experiência.
 
 ## Autor
----
 
 <h3 font-weight: 900;>Feito por Kevin Bafini</h3>
 
